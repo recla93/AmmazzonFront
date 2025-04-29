@@ -16,7 +16,9 @@
         <!-- Da un paio di anni c'è una nuova sintassi per le direttive -->
         @if (auth.isLogged())
         {
-
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart">Carrello</a>
+          </li>
           <li class="nav-item">
             <span class="nav-link">BENVENUTO {{auth.getUsername()}}</span>
           </li>
