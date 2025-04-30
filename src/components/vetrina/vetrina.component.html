@@ -1,0 +1,8 @@
+<h1>I prodotti della mia terra, inseriti nel database ieri sera io stesso</h1>
+<!-- track da un valore univoco ad ogni html creato per ogni giro del ciclo
+    ne ha bisogno angular per funzionare in maniera perfomante
+ -->
+@for (p of prodotti;track p.id)
+{
+  <h2>Nome: {{p.nome}} Prezzo: {{p.prezzo}} - Cat: {{p.categorie.join(",")}}</h2>
+}
