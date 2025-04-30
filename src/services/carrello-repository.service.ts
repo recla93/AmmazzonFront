@@ -10,6 +10,6 @@ export class CarrelloRepositoryService {
 
   getCarrelloBrutto()
   {
-    return this.http.get('/api/boh');
+    return this.http.get('/api/carts/mine');
   }
 }

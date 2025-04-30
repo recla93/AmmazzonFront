@@ -13,6 +13,8 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent
 {
+  inBaseADoveSono = 'password';
+
   username:string= '';
   password:string= '';
 
@@ -35,5 +37,16 @@ export class LoginComponent
         }
       }
     );
+  }
+
+  inganna($event: ClipboardEvent)
+  {
+    $event.preventDefault();
+    $event.clipboardData?.setData("text/plain","AHAHHAHHAHAHHAHAHA,BUFFONE");
+  }
+
+  no($event: ClipboardEvent) {
+    $event.preventDefault();
+    alert("NO")
   }
 }

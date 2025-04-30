@@ -11,6 +11,6 @@ export class CarrelloComponent {
 
   constructor(private carrelloRepo:CarrelloRepositoryService) {
 
-    carrelloRepo.getCarrelloBrutto().subscribe();
+    carrelloRepo.getCarrelloBrutto().subscribe(res=>console.log(res));
   }
 }
