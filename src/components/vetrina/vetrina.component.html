@@ -4,5 +4,5 @@
  -->
 @for (p of prodotti;track p.id)
 {
-  <h2>Nome: {{p.nome}} Prezzo: {{p.prezzo}} - Cat: {{p.categorie.join(",")}}</h2>
+  <h2>Nome: {{p.nome}} Prezzo: {{p.prezzo}} - Cat: {{p.categorie.join(",")}} <button (click)="carr.addProduct(p.id)">AGGIUNGI</button></h2>
 }

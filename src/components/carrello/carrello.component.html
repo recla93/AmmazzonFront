@@ -1,1 +1,28 @@
-<p>carrello works!</p>
+<div class="container mt-4" *ngIf="carrelloStato?.carrello">
+  <h2 class="mb-4">Il tuo carrello</h2>
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let item of carrelloStato.carrello?.items">
+      <!--
+        ?. prende il nome di null safe operator o Elvis Syntax
+        Se l'oggetto prima è null, non prende la parte dopo, ma considera null tutta l'espressione
+        if(quelloDavanti==null) non fare nulla
+
+      -->
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.nomeProdotto }}</h5>
+          <p class="card-text">
+            Prezzo unitario: {{ item.prezzoUnitario | currency:'EUR' }}<br>
+            Quantità: {{ item.qtn }}<br>
+            Subtotale: {{ item.qtn * item.prezzoUnitario | currency:'EUR' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-end fw-bold fs-5 mt-4">
+    Totale: {{ carrelloStato.carrello?.totale | currency:'EUR' }}
+  </div>
+</div>
